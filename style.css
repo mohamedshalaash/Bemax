@@ -840,7 +840,6 @@ header .linkes-items a:hover,
     align-items: center;
     gap: 1cm;
     justify-content: space-between;
-    height: 90vh;
 }
 .contact .left{
     width: 50%;
