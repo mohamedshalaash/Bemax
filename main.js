@@ -22,6 +22,7 @@ setTimeout(()=>{
 // OPEN AND CLOSE BAR
 document.querySelector('#bar-icon').addEventListener("click",()=>{
     document.querySelector('.linkes-items').classList.toggle('linkes-items-open')
+     document.querySelector('#bar-icon').classList.toggle('bar-close')
 })
 document.querySelector('.linkes-items').addEventListener("click",()=>{
     document.querySelector('.linkes-items').classList.toggle('linkes-items-open')
