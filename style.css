@@ -127,10 +127,35 @@ header img{
 header .logoDark{
     display: none;
 }
-header .bar-icon{
-    font-size: 25px;
+.bar-icon,.bar-close{
     cursor: pointer;
+    width: .8cm;
+    height: .8cm;
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bar-icon div,
+.bar-close div{
+    width: 25px;
+    height: 2.5px;
+    margin: 3px ;
+    background-color: #fff;
+    transition: all .5s;
+}
+.bar-close div{
+    margin: 0;
+    position: absolute;
+}
+.bar-close div:nth-child(2){
+    opacity: 0;
+}
+.bar-close div:nth-child(1){
+    transform: rotate(50deg);
+}
+.bar-close div:nth-child(3){
+    transform: rotate(-50deg);
 }
 header .linkes-items {
     list-style: none;
@@ -1012,7 +1037,7 @@ footer h3{
         font-size: 45px;
     }
     header .bar-icon{
-        display: block;
+        display: flex;
     }
     header .linkes-items,
     header .linkes-items-open{
