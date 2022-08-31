@@ -157,6 +157,10 @@ header .logoDark{
 .bar-close div:nth-child(3){
     transform: rotate(-50deg);
 }
+.header-scroll .bar-icon div,
+.header-scroll .bar-close div{
+    background-color: #000;
+}
 header .linkes-items {
     list-style: none;
     display: flex;
