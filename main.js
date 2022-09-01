@@ -95,9 +95,11 @@ btnOpenPop.forEach((eo)=>{
             body.style.overflow=""
         })
     })
-})
+}) 
 
 // HEADER LINKES CHANGES WHEN SCROLL
+
+let links =document.querySelectorAll('.linkes-items a')
 window.onscroll=function(){
     if(scrollY >=100){
         head.classList.add("header-scroll");
@@ -118,68 +120,64 @@ window.onscroll=function(){
             element.style.width= "0%";
         })
     }
-    // items-links active
-    if(scrollY <=about.offsetTop ){
-        a1.classList.add("active-link")
-        a2.classList.remove("active-link")
-        a3.classList.remove("active-link")
-        a4.classList.remove("active-link")
-        a5.classList.remove("active-link")
-        a6.classList.remove("active-link")
-        a7.classList.remove("active-link")
+    // // items-links active
+    if(scrollY <=about.offsetTop -115){
+        links.forEach((a)=>{
+            a.classList.remove("active-link")
+            a1.classList.add("active-link")
+        })
     }
     if(scrollY >=about.offsetTop -115){
-        a1.classList.remove("active-link")
-        a2.classList.add("active-link")
-        a3.classList.remove("active-link")
-        a4.classList.remove("active-link")
-        a5.classList.remove("active-link")
-        a6.classList.remove("active-link")
-        a7.classList.remove("active-link")
+        links.forEach((a)=>{
+            a.classList.remove("active-link")
+            a2.classList.add("active-link")
+        })
     }
     if(scrollY >=portfolio.offsetTop -110){
-        a1.classList.remove("active-link")
-        a2.classList.remove("active-link")
-        a3.classList.add("active-link")
-        a4.classList.remove("active-link")
-        a5.classList.remove("active-link")
-        a6.classList.remove("active-link")
-        a7.classList.remove("active-link")
+        links.forEach((a)=>{
+            a.classList.remove("active-link")
+            a3.classList.add("active-link")
+        })
     }
-    if(scrollY >=services.offsetTop -110){
-        a1.classList.remove("active-link")
-        a2.classList.remove("active-link")
-        a3.classList.remove("active-link")
-        a4.classList.add("active-link")
-        a5.classList.remove("active-link")
-        a6.classList.remove("active-link")
-        a7.classList.remove("active-link")
+    if(scrollY >=services.offsetTop -115){
+        links.forEach((a)=>{
+            a.classList.remove("active-link")
+            a4.classList.add("active-link")
+        })
     }
     if(scrollY >=price.offsetTop -115){
-        a1.classList.remove("active-link")
-        a2.classList.remove("active-link")
-        a3.classList.remove("active-link")
-        a4.classList.remove("active-link")
-        a5.classList.add("active-link")
-        a6.classList.remove("active-link")
-        a7.classList.remove("active-link")
+        links.forEach((a)=>{
+            a.classList.remove("active-link")
+            a5.classList.add("active-link")
+        })
     }
     if(scrollY >=blog.offsetTop -115){
-        a1.classList.remove("active-link")
-        a2.classList.remove("active-link")
-        a3.classList.remove("active-link")
-        a4.classList.remove("active-link")
-        a5.classList.remove("active-link")
-        a6.classList.add("active-link")
-        a7.classList.remove("active-link")
+        links.forEach((a)=>{
+            a.classList.remove("active-link")
+            a6.classList.add("active-link")
+        })
     }
     if(scrollY >=contact.offsetTop -115){
-        a1.classList.remove("active-link")
-        a2.classList.remove("active-link")
-        a3.classList.remove("active-link")
-        a4.classList.remove("active-link")
-        a5.classList.remove("active-link")
-        a6.classList.remove("active-link")
-        a7.classList.add("active-link")
+        links.forEach((a)=>{
+            a.classList.remove("active-link")
+            a7.classList.add("active-link")
+        })
     }
 }
+// portofolio images change 
+let category=document.querySelectorAll('.category li')
+let portfolioImgs=document.querySelectorAll('.portfolio-box section')
+category.forEach((li)=>{
+    li.addEventListener("click",(e)=>{
+        category.forEach((li)=>{
+            li.classList.remove("active-category")
+        })
+        li.classList.add("active-category")
+        portfolioImgs.forEach((img)=>{
+            img.style.display="none"
+        })
+        document.querySelectorAll(e.target.dataset.img).forEach((e)=>{
+            e.style.display="block"
+        })
+    })
+})
